@@ -12,6 +12,7 @@ import * as Utils from 'utils/utils';
 import {isDesktopApp} from 'utils/user_agent';
 import AddChannelDropdown from '../add_channel_dropdown';
 import ChannelFilter from '../channel_filter';
+import InviteUsersButton from '../invite_users_button';
 
 type Props = {
     canGoForward: boolean;
@@ -121,6 +122,7 @@ export default class ChannelNavigator extends React.PureComponent<Props> {
                             {historyArrows}
                         </div>
                         {addChannelDropdown}
+                        <InviteUsersButton buttonType='icon-button'/>
                     </div>
                 </div>
             );
@@ -130,6 +132,7 @@ export default class ChannelNavigator extends React.PureComponent<Props> {
                     {!this.props.showUnreadsCategory && <ChannelFilter/>}
                     {jumpToButton}
                     {addChannelDropdown}
+                    <InviteUsersButton buttonType='icon-button'/>
                 </div>
             );
         }

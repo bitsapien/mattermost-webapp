@@ -27,6 +27,7 @@ import {SidebarCategoryHeader} from '../sidebar_category_header';
 import SidebarCategorySortingMenu from './sidebar_category_sorting_menu';
 
 import SidebarCategoryMenu from './sidebar_category_menu';
+import InviteUsersButton from '../invite_users_button';
 
 type Props = {
     category: ChannelCategory;
@@ -103,7 +104,6 @@ export default class SidebarCategory extends React.PureComponent<Props, State> {
 
     renderChannel = (channelId: string, index: number) => {
         const {setChannelRef, getChannelRef, category, draggingState} = this.props;
-
         return (
             <SidebarChannel
                 key={channelId}
@@ -334,6 +334,7 @@ export default class SidebarCategory extends React.PureComponent<Props, State> {
                 disableInteractiveElementBlocking={true}
             >
                 {(provided, snapshot) => {
+                    const inviteMembersButton = category.type === 'direct_messages' ? <InviteUsersButton buttonType='sticky-button'/> : null;
                     return (
                         <div
                             className={classNames('SidebarChannelGroup a11y__section', {
@@ -389,6 +390,7 @@ export default class SidebarCategory extends React.PureComponent<Props, State> {
                                     );
                                 }}
                             </Droppable>
+                            {inviteMembersButton}
                         </div>
                     );
                 }}

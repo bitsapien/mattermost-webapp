@@ -14,6 +14,7 @@ import Constants, {DraggingStates} from 'utils/constants';
 import SidebarBaseChannel from './sidebar_base_channel';
 import SidebarDirectChannel from './sidebar_direct_channel';
 import SidebarGroupChannel from './sidebar_group_channel';
+import InviteUsersButton from '../invite_users_button';
 
 type Props = {
 
